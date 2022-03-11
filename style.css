@@ -1,0 +1,310 @@
+/*---------- FUENTES IMPORTADAS DE GOOGLE FONTS ----------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300&display=swap");
+
+/*---------- ESTILOS GENERALES ----------- */
+
+* {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #666;
+  scroll-behavior: smooth;
+  /* Este atributo es para que el deplazamiento de la página sea suave */
+}
+
+body {
+  width: 100%;
+  background-color: #eee;
+}
+
+.contenedor {
+  position: relative;
+  width: 100%;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--color-primario);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+span {
+  color: var(--color-secundario);
+}
+
+/*---------- VARIABLES ----------- */
+
+:root {
+  --color-primario: rgb(45, 90, 45);
+  --color-secundario: rgb(225, 175, 50);
+  /* Variables css(cambiando aquí el color, se cambia en toda la página) */
+}
+
+/*---------- CABECERA ----------- */
+
+nav {
+  position: fixed;
+  /* La posición fixed es para que el menú se quede pegado arriba, fijo */
+  z-index: 100;
+  width: 100%;
+  min-height: 70px;
+  padding: 1rem 0.5rem;
+  top: 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  font-size: 1.1rem;
+  display: block;
+  color: var(--color-primario);
+  transition: all 0.5s;
+  margin-right: 0.7rem;
+}
+
+nav a:hover {
+  color: var(--color-secundario);
+}
+
+.logo {
+  font-variant: small-caps;
+  font-size: 1.6rem;
+  flex: 2;
+  margin: 0 0 0 1rem;
+}
+
+/*---------- BANNER ----------- */
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-right: 2rem;
+  margin-top: 70px;
+  margin-bottom: 4rem;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
+}
+
+.degradado {
+  background: url(img/banner.jpg) center;
+  background-size: cover;
+  clip-path: polygon(2% 0, 98% 0, 100% 100%, 0 100%);
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  margin-top: 3rem;
+  margin-right: 3rem;
+  text-align: right;
+}
+
+sub {
+  color: var(--color-secundario);
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+  text-align: right;
+  margin-right: 3rem;
+}
+
+.banner .boton {
+  margin-bottom: 1rem;
+}
+
+/*---------- BOTONES ----------- */
+
+.boton {
+  display: block;
+  color: #fff;
+  background-color: var(--color-primario);
+  width: 100px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  margin-top: auto;
+  transition: all 0.5s;
+}
+
+.boton:hover {
+  background-color: rgb(60, 105, 60);
+}
+
+.boton-subir {
+  position: fixed;
+  color: var(--color-secundario);
+  font-size: 2rem;
+  bottom: 2rem;
+  left: calc(50% - 1rem);
+}
+
+/*---------- ARTÍCULOS ----------- */
+
+.articulo {
+  width: 70%;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 5px;
+}
+
+.articulo img {
+  float: left;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+/*---------- FORMULARIO ----------- */
+
+form.articulo {
+  background-color: rgb(210, 220, 210);
+  max-width: 600px;
+}
+
+input {
+  margin: 1rem auto;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 2px;
+}
+
+input:focus {
+  outline: var(--color-secundario) solid 2px;
+}
+
+input::placeholder {
+  color: #bbb;
+}
+
+form .boton {
+  margin: 1rem auto 0;
+}
+
+/*---------- FOOTER ----------- */
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  background: var(--color-primario);
+  margin-top: 3rem;
+  padding: 3rem 0;
+}
+
+footer p,
+i {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+footer i {
+  font-size: 1.3rem;
+}
+
+/*---------- GALERÍA DE FOTOS ----------- */
+
+.galeria {
+  width: 90%;
+  margin: 140px auto 70px;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.cajaFoto {
+  width: 100%;
+  height: 300px;
+}
+
+.galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9px;
+  box-shadow: 0 3px 6px #666;
+  transition: all 0.5s;
+  filter: grayscale(50%);
+}
+
+.galeria img:hover {
+  transform: scale(1.2);
+  filter: grayscale(0);
+}
+
+/* MEDIA QUERY, Para que se vea bien en pantallas pequeñas */
+
+@media only screen and (max-width: 620px) {
+  :root {
+    font-size: 0.8rem;
+  }
+
+  .articulo {
+    width: 90%;
+  }
+
+  .galeria img:hover {
+    transform: scale(1.1);
+  }
+
+  h1 {
+    font-size: 2.7rem;
+  }
+
+  footer p {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+ct-pgn-viewer.ct-pgn-viewer {
+  max-width: 900px;
+  margin-inline: auto;
+  gap: 1em;
+}
+
+ct-pgn-viewer.ct-pgn-viewer > * > * {
+  max-width: 400px;
+  margin: auto 0;
+  justify-self: center;
+  align-self: center;
+  max-width: fit-content;
+}
+
+ct-pgn-viewer.ct-pgn-viewer > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+ct-pgn-viewer.ct-pgn-viewer move-list {
+  height: 264px;
+  overflow: hidden;
+}
+
+ct-pgn-viewer.ct-pgn-viewer move-list .ct-move-list-container {
+  background-color: hsl(0, 0%, 95%);
+}
